@@ -42,6 +42,7 @@ public class RegistroActivity extends AppCompatActivity
         binding.cbotros.setOnClickListener(this);
         binding.btnregistrar.setOnClickListener(this);
         binding.spestadocivil.setOnItemSelectedListener(this);
+        binding.btnlistapersona.setOnClickListener(this);
 
     }
 
@@ -164,7 +165,7 @@ public class RegistroActivity extends AppCompatActivity
             agregarQuitarPreferencia(v, "Otras preferencias");
         }else if(v.getId() == R.id.btnregistrar){
             registrarPersona();
-            registrarPersona();
+            setearControles();
         }else if (v.getId()==R.id.btnlistapersona){
             Intent intentLista = new Intent(getApplicationContext(),
                     ListaActivity.class);
