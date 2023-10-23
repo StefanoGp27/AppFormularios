@@ -2,7 +2,9 @@ package pe.edu.idat.appfomsandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 
@@ -10,7 +12,8 @@ import java.util.ArrayList;
 
 import pe.edu.idat.appfomsandroid.databinding.ActivityListaBinding;
 
-public class ListaActivity extends AppCompatActivity {
+public class ListaActivity extends AppCompatActivity
+ implements View.OnClickListener{
     private ActivityListaBinding binding;
 
     @Override
@@ -25,5 +28,12 @@ public class ListaActivity extends AppCompatActivity {
                 listaPersonas
         );
         binding.lvpersonas.setAdapter(arrayAdapter);
+        binding.btnregresarregistro.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(getApplicationContext(),
+                RegistroActivity.class));
     }
 }
